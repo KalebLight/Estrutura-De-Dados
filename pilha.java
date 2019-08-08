@@ -4,25 +4,38 @@ public class pilha {
 
 
 	public pilha(){
-		elementos = new int[10];
+		elementos = new int[3];
 		t = -1;
 	}
-	
+		
 	public void push(int e) {
-		if(isFull()) {
-			throw new RunTimeException("Ta full ot√°rio!")
+		if(t == elementos.length - 1) {
+			int elementos2[];
+			
+			elementos2 = new int[elementos.length * 2];
+			for(int i = 0; i < elementos.length; i++) {
+				elementos2[i] = elementos[i];
+			}	
+				elementos = elementos2;
+				t++;
+				elementos[t] = e;
 		}
-		t++;
-		elementos[t] = e;
+		else {
+			t++;
+			elementos[t] = e;
+		}
 	}
 	
 	public int pop(){
+		if(isEmpty()) {
+			throw new RuntimeException("Ta vazio, ot·rio!");
+		}
 		int e;
 		e = elementos[t];
 		t--;
 		return e;
 	}
-	
+		
 	public boolean isEmpty() {
 		if (t == -1) {
 			return true;
@@ -32,18 +45,20 @@ public class pilha {
 		}
 	}
 	
-	
 	public boolean isFull() {
-		if(t == elementos.length) {
+		if(t == elementos.length - 1) {
 			return true;
 		}
 		else {
 			return false;
 		}
 	}
-	
+			
 	public int top() {
+		if(isEmpty()) {
+			throw new RuntimeException("Ta vazio, ot·rio!");
+		}
 		return elementos[t];
 	}
 	
-}//eotc
+}//eoc
