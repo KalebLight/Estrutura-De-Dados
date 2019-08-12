@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class MainClass {
-	public static void main(String args[]) {
+	public static void main(String args[]) throws EPilhaVazia {
 		
 		Scanner input = new Scanner(System.in);
 		
 		boolean loop = true;
 		int menu;
 		
-		pilha p = new pilha();
+		Pilha p = new Pilha();
 		int in;
 		
 				
@@ -22,17 +22,17 @@ public class MainClass {
 				System.out.println("\n Digite o número a ir pra pilha \n");
 				in = input.nextInt();
 				p.push(in);
-				break;			
+				break;	
 			
 			case 2://pop
-				if(p.isEmpty()) {
-					System.out.println("A pilha está vazia.");
-				}
-				else {
+				try{
 					System.out.printf("O número %d foi descartado da pilha", p.pop());
 				}
+				catch(EPilhaVazia e){
+					System.out.println(e.getMessage());
+				}	
 				break;
-				
+								
 			case 3://isEmpty
 				if(p.isEmpty()) {
 					System.out.println("A pilha ta vazia.");
@@ -52,11 +52,11 @@ public class MainClass {
 				break;
 				
 			case 5://top
-				if(p.isEmpty()){
-					System.out.println("A pilha ta vazia");
-				}
-				else {
+				try {
 					System.out.printf("O topo da pilha é: %d ", p.top());	
+				}
+				catch(EPilhaVazia e) {
+					System.out.println(e.getMessage());
 				}
 				
 				break;

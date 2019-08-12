@@ -1,9 +1,12 @@
-public class pilha {
+public class Pilha {
+	
+	
+	
 	int elementos[];
 	int t;
 
 
-	public pilha(){
+	public Pilha(){
 		elementos = new int[3];
 		t = -1;
 	}
@@ -26,9 +29,9 @@ public class pilha {
 		}
 	}
 	
-	public int pop(){
+	public int pop() throws EPilhaVazia{
 		if(isEmpty()) {
-			throw new RuntimeException("Ta vazio!");
+			throw new EPilhaVazia("Ta vazio!");
 		}
 		int e;
 		e = elementos[t];
@@ -54,9 +57,9 @@ public class pilha {
 		}
 	}
 			
-	public int top() {
+	public int top() throws EPilhaVazia {
 		if(isEmpty()) {
-			throw new RuntimeException("Ta vazio!");
+			throw new EPilhaVazia("Ta vazio!");
 		}
 		return elementos[t];
 	}
