@@ -9,7 +9,7 @@ public class MainClass {
 		int menu;
 		
 		Pilha p = new Pilha();
-		int in;
+		Object in;
 		
 				
 		while(loop) {
@@ -20,13 +20,13 @@ public class MainClass {
 			
 			case 1://push
 				System.out.println("\n Digite o número a ir pra pilha \n");
-				in = input.nextInt();
+				in = input.next();
 				p.push(in);
 				break;	
 			
 			case 2://pop
 				try{
-					System.out.printf("O número %d foi descartado da pilha", p.pop());
+					System.out.print("Foi descartado da pilha:" + p.pop());
 				}
 				catch(EPilhaVazia e){
 					System.out.println(e.getMessage());
@@ -53,7 +53,7 @@ public class MainClass {
 				
 			case 5://top
 				try {
-					System.out.printf("O topo da pilha é: %d ", p.top());	
+					System.out.print("O topo da pilha é: " + p.top());	
 				}
 				catch(EPilhaVazia e) {
 					System.out.println(e.getMessage());

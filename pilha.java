@@ -2,20 +2,20 @@ public class Pilha {
 	
 	
 	
-	int elementos[];
+	Object elementos[];
 	int t;
 
 
 	public Pilha(){
-		elementos = new int[3];
+		elementos = new Object[3];
 		t = -1;
 	}
 		
-	public void push(int e) {
+	public void push(Object e) {
 		if(t == elementos.length - 1) {
-			int elementos2[];
+			Object elementos2[];
 			
-			elementos2 = new int[elementos.length * 2];
+			elementos2 = new Object[elementos.length * 2];
 			for(int i = 0; i < elementos.length; i++) {
 				elementos2[i] = elementos[i];
 			}	
@@ -29,11 +29,11 @@ public class Pilha {
 		}
 	}
 	
-	public int pop() throws EPilhaVazia{
+	public Object pop() throws EPilhaVazia{
 		if(isEmpty()) {
 			throw new EPilhaVazia("Ta vazio!");
 		}
-		int e;
+		Object e;
 		e = elementos[t];
 		t--;
 		return e;
@@ -57,7 +57,7 @@ public class Pilha {
 		}
 	}
 			
-	public int top() throws EPilhaVazia {
+	public Object top() throws EPilhaVazia {
 		if(isEmpty()) {
 			throw new EPilhaVazia("Ta vazio!");
 		}
