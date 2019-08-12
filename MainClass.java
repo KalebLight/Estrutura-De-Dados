@@ -19,14 +19,14 @@ public class MainClass {
 			switch(menu) {
 			
 			case 1://push
-				System.out.println("\n Digite o número a ir pra pilha \n");
+				System.out.println("\n Digite o que vai pra pilha: \n");
 				in = input.next();
 				p.push(in);
 				break;	
 			
 			case 2://pop
 				try{
-					System.out.print("Foi descartado da pilha:" + p.pop());
+					System.out.print("Foi descartado da pilha: " + p.pop());
 				}
 				catch(EPilhaVazia e){
 					System.out.println(e.getMessage());

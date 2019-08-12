@@ -13,8 +13,7 @@ public class Pilha {
 		
 	public void push(Object e) {
 		if(t == elementos.length - 1) {
-			Object elementos2[];
-			
+			Object elementos2[];			
 			elementos2 = new Object[elementos.length * 2];
 			for(int i = 0; i < elementos.length; i++) {
 				elementos2[i] = elementos[i];
