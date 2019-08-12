@@ -28,7 +28,7 @@ public class pilha {
 	
 	public int pop(){
 		if(isEmpty()) {
-			throw new RuntimeException("Ta vazio, otário!");
+			throw new RuntimeException("Ta vazio!");
 		}
 		int e;
 		e = elementos[t];
@@ -56,7 +56,7 @@ public class pilha {
 			
 	public int top() {
 		if(isEmpty()) {
-			throw new RuntimeException("Ta vazio, otário!");
+			throw new RuntimeException("Ta vazio!");
 		}
 		return elementos[t];
 	}
