@@ -14,7 +14,7 @@ public class MainClass {
 				
 		while(loop) {
 			System.out.println("\n Push  -  [1] \n Pop   -  [2] \n Vazia? - [3] \n Cheia? - [4]"
-					+ " \n Topo  -  [5] \n Sair - [0] ");
+					+ " \n Topo  -  [5] \n Size - [6] \n Sair - [0] ");
 			menu = input.nextInt();
 			switch(menu) {
 			
@@ -59,6 +59,15 @@ public class MainClass {
 					System.out.println(e.getMessage());
 				}
 				
+				break;
+				
+			case 6://size
+				try {
+					System.out.print("O tamanho da pilha é de: \n" +p.size());
+				}
+				catch(EPilhaVazia e){
+					System.out.println(e.getMessage());
+				}
 				break;
 				
 			case 0:

@@ -63,4 +63,8 @@ public class Pilha {
 		return elementos[t];
 	}
 	
+	public int size() throws EPilhaVazia{
+		return t + 1;		
+	}
+	
 }//eoc
