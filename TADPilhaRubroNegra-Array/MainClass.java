@@ -10,8 +10,9 @@ public class MainClass {
 		Object in;
 		
 		while(loop) {			
-			System.out.println("\nPush(Red) -------- [1] \nPush(Black) ------ [2] \nPop(Red) --------- [3]\nPop(Black) ------- [4]\nTop(Red) --------- [5] "
-					+ "\nTop(Black) ------- [6]\nEmpty?(Red) ------ [7]\nEmpty?(Black) ----- [8]");
+			System.out.println("Sair ------------- [0] \nPush(RED) -------- [1] \nPush(Black) ------ [2] \nPop(RED) --------- [3]\nPop(Black) -------"
+					+ " [4]\nTop(RED) --------- [5] \nTop(Black) ------- [6]\nEmpty?(RED) ------ [7]\nEmpty?(Black) ---- "
+					+ "[8]\nSize(RED) -------- [9]\nSize(Black) ----- [10]\n ");
 			menu = input.nextInt();
 			
 			switch(menu) {			
@@ -28,40 +29,77 @@ public class MainClass {
 				break;
 				
 			case 3://pop red
-				System.out.print("Foi tirado da PILHA vermelha ->" + p.pop_Red());
+				try {
+					System.out.print("Foi tirado da PILHA vermelha ->" + p.pop_Red() + "\n");
+				}
+				catch(EPilhaVazia e) {
+					System.out.println(e.getMessage());
+				}
 				break;
 				
 			case 4://pop black
-				System.out.print("Foi tirado da PILHA PRETA ->" + p.pop_Black());
+				try {
+					System.out.print("Foi tirado da PILHA PRETA ->" + p.pop_Black() + "\n");	
+				}
+				catch(EPilhaVazia e) {
+					System.out.println(e.getMessage());
+				}				
 				break;
 				
 			case 5://top red
-				System.out.print("O top da PILHA VERMELHA é: " + p.top_Red());
+				try {
+					System.out.print("O top da PILHA VERMELHA é: " + p.top_Red() + "\n");
+				}
+				catch(EPilhaVazia e) {
+					System.out.println(e.getMessage());
+				}
 				break;
 				
 			case 6://top black
-				System.out.print("O top da PILHA PRETA é: " + p.top_Black());
+				try {
+					System.out.print("O top da PILHA PRETA é: " + p.top_Black() + "\n");
+				}
+				catch(EPilhaVazia e) {
+					System.out.println(e.getMessage());
+				}
 				break;
 				
 			case 7://isEmptyRed
 					if(p.isEmpty_Red()) {
-						System.out.println("A PILHA VERMELHA está vazia");
+						System.out.println("A PILHA VERMELHA está vazia" + "\n");
 					}
 					else {
-						System.out.println("Tem alguma coisa na PILHA VERMELHA");
+						System.out.println("Tem alguma coisa na PILHA VERMELHA" + "\n");
 					}
 				break;
 
 			case 8://isEmptyBlack
 				if(p.isEmpty_Black()) {
-					System.out.println("A PILHA PRETA está vazia");
+					System.out.println("A PILHA PRETA está vazia" + "\n");
 				}
 				else {
-					System.out.println("Tem algo na PILHA PRETA");
+					System.out.println("Tem algo na PILHA PRETA" + "\n");
 				}
+				break;
 			
+			case 9://sizeRed
+				try {
+					System.out.print("O tamanho da PILHA VERMELHA é: " +p.size_Red() + "\n");	
+				}
+				catch(EPilhaVazia e) {
+					System.out.println(e.getMessage());
+				}
+				break;
 				
-			
+			case 10://sizeBlack
+				try {
+					System.out.print("O tamanho da PILHA PRETA é: " + p.size_Black() + "\n");
+				}
+				catch(EPilhaVazia e) {
+					System.out.println(e.getMessage());
+				} 
+				break;
+				
 			}//end of switch
 			
 		}//eol

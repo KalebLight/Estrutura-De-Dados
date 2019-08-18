@@ -19,24 +19,45 @@ public class Pilha {
 		elementos[top_Black] = in;
 	}
 	
-	public Object top_Red() {
-		return elementos[top_Red];
+	public Object top_Red() throws EPilhaVazia{
+		if(this.isEmpty_Red()) {
+			throw new EPilhaVazia("A pilha está vazia");
+		}
+		else {
+			return elementos[top_Red];	
+		}		
 	}
 	
-	public Object top_Black() {
-		return elementos[top_Black];
+	public Object top_Black() throws EPilhaVazia{
+		if(this.isEmpty_Black()) {
+			throw new EPilhaVazia("A pilha está vazia");
+		}
+		else {
+			return elementos[top_Black];
+		}
 	}
 	
-	public Object pop_Red() {
-		Object e = elementos[top_Red];
-		top_Red--;		
-		return e;
+	public Object pop_Red() throws EPilhaVazia{
+		if(this.isEmpty_Red()) {
+			throw new EPilhaVazia("A pilha está vazia!");
+		}
+		else {
+			Object e = elementos[top_Red];
+			top_Red--;		
+			return e;	
+		}
 	}
 	
-	public Object pop_Black() {
-		Object e = elementos[top_Black];
-		top_Black++;
-		return e;
+	public Object pop_Black() throws EPilhaVazia{
+		if(this.isEmpty_Black()) {
+			throw new EPilhaVazia("A pilha está vazia!");
+		}
+		else {
+			Object e = elementos[top_Black];
+			top_Black++;
+			return e;
+		}
+		
 	}
 	
 	
@@ -57,5 +78,25 @@ public class Pilha {
 			return false;
 		}
 	}
+	
+	public int size_Red() throws EPilhaVazia{
+		if(this.isEmpty_Red()) {
+			throw new EPilhaVazia("Ta vazia!");			
+		}
+		else {
+			return top_Red + 1;	
+		}
+		
+	}
+	
+	public int size_Black() throws EPilhaVazia{
+		if(this.isEmpty_Black()) {
+			throw new EPilhaVazia("Ta vazia!");
+		}
+		else {
+			return elementos.length - top_Black;
+		}
+	}
+	
 	
 }//end of class
