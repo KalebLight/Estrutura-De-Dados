@@ -106,5 +106,5 @@ public class MainClass {
 
 	
 	
-	}//end of daqule role lá
-}//eoc
+	}//end of daquele role lá
+}//end of class
