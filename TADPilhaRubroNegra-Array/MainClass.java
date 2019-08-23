@@ -103,8 +103,6 @@ public class MainClass {
 			}//end of switch
 			
 		}//eol
-
-	
 	
 	}//end of daquele role lá
 }//end of class

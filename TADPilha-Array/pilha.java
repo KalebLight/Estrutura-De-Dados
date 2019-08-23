@@ -1,10 +1,7 @@
 public class Pilha {
 	
-	
-	
 	Object elementos[];
 	int t;
-
 
 	public Pilha(){
 		elementos = new Object[3];

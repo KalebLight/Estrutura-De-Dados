@@ -29,8 +29,7 @@ public class Pilha {
 		   
 		    this.top_Black = (this.elementos.length * 2) - (this.elementos.length - this.top_Black);
 		    elementos = elementos2;			
-		}//End of condition
-		
+		}//End of condition		
 		top_Red++;
 		elementos[top_Red] = in;		
 	}
@@ -55,8 +54,7 @@ public class Pilha {
 			
 			this.top_Black = (this.elementos.length * 2) - (this.elementos.length - this.top_Black);
 		    elementos = elementos2;			
-		}//End of condition
-		
+		}//End of condition		
 		top_Black--;
 		elementos[top_Black] = in;
 	}
@@ -135,6 +133,5 @@ public class Pilha {
 		else {
 			return elementos.length - top_Black;
 		}
-	}
-		
+	}		
 }//end of class

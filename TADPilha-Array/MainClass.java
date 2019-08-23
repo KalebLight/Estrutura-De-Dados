@@ -9,8 +9,7 @@ public class MainClass {
 		int menu;
 		
 		Pilha p = new Pilha();
-		Object in;
-		
+		Object in;		
 				
 		while(loop) {
 			System.out.println("\n Push  -  [1] \n Pop   -  [2] \n Vazia? - [3] \n Cheia? - [4]"
@@ -69,7 +68,7 @@ public class MainClass {
 					System.out.println(e.getMessage());
 				}
 				break;
-				
+					
 			case 0:
 				loop = false;
 				
