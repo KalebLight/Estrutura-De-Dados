@@ -1,4 +1,4 @@
-package Classe;
+package Classes;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class MainClass {
 		boolean loop = true;
 		Object in;
 		Scanner input = new Scanner(System.in);
-		Pilha_ListaEncadeada p = new Pilha_ListaEncadeada();
+		Pilha p = new Pilha();
 		
 		while(loop) {
 			System.out.println("Sair ----- [0] \nPush  ------  [1] \nPop   ------  [2] \nTop --------- [3] \nSize -------- [4]");
@@ -17,12 +17,12 @@ public class MainClass {
 			case 1:
 				System.out.println("Digite o que vai pra pilha: ");
 				in = input.next();
-				p.push(in);
+				p.queue(in);
 				break;
 				
 			case 2:
 				try{
-					System.out.print("Objeto removido: " + p.pop() + "\n");
+					System.out.print("Objeto removido: " + p.enqueue() + "\n");
 				}
 				catch(EPilhaVazia e) {
 					System.out.println(e.getMessage());
@@ -31,7 +31,7 @@ public class MainClass {
 				
 			case 3:
 				try{
-					System.out.print("O topo da pilha é: " + p.top() + "\n");
+					System.out.print("O topo da pilha é: " + p.topo() + "\n");
 				}
 				catch(EPilhaVazia e) {
 					System.out.println(e.getMessage());
@@ -39,7 +39,7 @@ public class MainClass {
 				break;
 				
 			case 4:
-				System.out.print("O tamanho da pilha é de: " + p.size() + "\n");
+				System.out.print("O tamanho da pilha é de: " + p.tamanho() + "\n");
 				break;
 				
 			case 0:
