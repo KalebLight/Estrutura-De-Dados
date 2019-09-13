@@ -13,7 +13,7 @@ public class MainClass {
 		
 		
 		while(loop) {
-			System.out.println("1 - Replace \n2 - Remove \n8 - Verificar Array");
+			System.out.println("1 - Replace \n2 - Insert\n3 - Get \n4 - Remove \n8 - Verificar Array");
 			menu = input.nextInt();
 			switch(menu) {
 			
@@ -22,13 +22,27 @@ public class MainClass {
 				value = input.next();
 				System.out.println("Em qual posição? \n");
 				place = input.nextInt();
-				vector.set(value, place);
+				vector.set(value, place-1);
 				break;
 			
-			case 2: //Remove
+			case 2://Insert
+				System.out.println("O que você quer inserir?");
+				value = input.next();
+				System.out.println("Em qual posição? \n");
+				place = input.nextInt();
+				vector.insert(value, place-1);
+				break;
+							
+			case 3://get
+				System.out.println("Qual posição vc quer conferir? ");
+				place = input.nextInt();
+				System.out.println("Objeto na posição " + place+": " + vector.get(place));
+				break;
+				
+			case 4: //Remove
 				System.out.println("Quer apagar qual posição? \n");
 				place = input.nextInt();
-				System.out.println("Objeto removido: "+ vector.remove(place));
+				System.out.println("Objeto removido: "+ vector.remove(place-1));
 				break;
 				
 			case 8://Verificar Vetor
