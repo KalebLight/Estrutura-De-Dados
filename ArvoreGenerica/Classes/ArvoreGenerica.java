@@ -76,8 +76,8 @@ public class ArvoreGenerica
 	/** Troca dois elementos de posi��o */
 	public void swapElements(No v, No w)
 	{
-		/*M�todo que serve de exerc�cio
-		 * Este m�todo dever� fazer com que o objeto
+		/* Metodo que serve de exercicio
+		 * Este metodo devera fazer com que o objeto
 		 * que estava na posi��o v fique na posi��o w
 		 * e fazer com que o objeto que estava na posi��o w
 		 * fique na posi��o v
