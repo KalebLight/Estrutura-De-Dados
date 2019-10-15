@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class ArvoreGenerica
 {
-	//Atributos da �rvore
+	//Atributos da arvore
 	No raiz;
 	int tamanho;
 	
@@ -46,7 +46,7 @@ public class ArvoreGenerica
 		return (v.childrenNumber() == 0);
 	}
 	
-	/** Testa se um No � a raiz */
+	/** Testa se um No eh a raiz */
 	public boolean isRoot(No v)
 	{
 		return v == raiz;
@@ -73,14 +73,14 @@ public class ArvoreGenerica
 		tamanho--;
 		return o;
 	}
-	/** Troca dois elementos de posi��o */
+	/** Troca dois elementos de posicao */
 	public void swapElements(No v, No w)
 	{
-		/*M�todo que serve de exerc�cio
-		 * Este m�todo dever� fazer com que o objeto
-		 * que estava na posi��o v fique na posi��o w
-		 * e fazer com que o objeto que estava na posi��o w
-		 * fique na posi��o v
+		/* Metodo que serve de exercicio
+		 * Este metodo devera fazer com que o objeto
+		 * que estava na posicao V fique na posicao W
+		 * e fazer com que o objeto que estava na posicao W
+		 * fique na posicao V
 		 */  
 		
 	}
@@ -100,7 +100,7 @@ public class ArvoreGenerica
 	/** Retorna a altura da árvore */
 	public int height()
 	{
-		// M�todo que serve de exercício
+		// Metodo que serve de exercício
 		int altura = 0;
 		return altura;
 	}
@@ -110,10 +110,10 @@ public class ArvoreGenerica
 		// Método Noo implementados --- Coleguinha fique a vontade para fazê-los
 		return null;
 	}
-	/** Retorna um iterator com as posi��es (Nos) da �rvore */
+	/** Retorna um iterator com as posicoes (Nos) da arvore */
 	public Iterator Nos()
 	{
-		// M�todo Noo implementados --- Coleguinha fique a vontade para faz�-los
+		// Metodo Noo implementados --- Coleguinha fique a vontade para faze-los
 		return null;
 	}
 	/** Retorna o Nomero de Nos da árvore
@@ -122,7 +122,7 @@ public class ArvoreGenerica
 	{
 		return 0;
 	}
-	/** Retorna se a �vore est� vazia. Sempre vai ser falso, pois Noo permitimos remover a raiz
+	/** Retorna se a avore esta vazia. Sempre vai ser falso, pois Noo permitimos remover a raiz
 	 */
 	public boolean isEmpty()
 	{
@@ -130,7 +130,7 @@ public class ArvoreGenerica
 	}
 	public Object replace(No v, Object o)
 	{
-		// M�todo de exerc�cio
+		// Metodo de exercicio
 		return null;
 	}
 }
