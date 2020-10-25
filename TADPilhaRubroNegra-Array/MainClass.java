@@ -17,13 +17,13 @@ public class MainClass {
 			
 			switch(menu) {			
 			case 1://push red
-				System.out.println("Digite oq ir· para a PILHA VERMELHA: ");
+				System.out.println("Digite oq ir√° para a PILHA VERMELHA: ");
 				in = input.next();
 				p.push_Red(in);
 				break;		
 				
 			case 2://push black
-				System.out.println("Digite oq ir· para a PILHA PRETA: ");
+				System.out.println("Digite oq ir√° para a PILHA PRETA: ");
 				in = input.next();
 				p.push_Black(in);
 				break;
@@ -45,10 +45,50 @@ public class MainClass {
 					System.out.println(e.getMessage());
 				}				
 				break;
+				public class Fila {
+	private int tamanho = 0;
+	private No start = null;
+	private No end = null;
+	
+	public Fila() {		
+	}
+	
+	public void queue(Object in) {
+		if (this.start == null) {
+			this.start = new No(in, null);
+			this.tamanho++;
+			return;
+		}
+		if (this.end == null){
+			this.end = new No(in, null);
+			this.start.setProximo(this.end);
+			tamanho++;
+			return;
+		}
+		
+		else {
+			No noTemp = new No(in,null);
+			this.end.setProximo(noTemp);
+			this.end = noTemp;
+			this.tamanho++;
+		}
+	}	
+	
+	public Object enqueue() throws EFilaVazia{
+		if(tamanho == 0) {
+			throw new EFilaVazia("T√° vazia!");
+		}
+		else {
+			Object lul = start.getValor();
+			start = start.getProximo();
+			tamanho--;
+			return lul;	
+		}				
+	}	
 				
 			case 5://top red
 				try {
-					System.out.print("O top da PILHA VERMELHA È: " + p.top_Red() + "\n");
+					System.out.print("O top da PILHA VERMELHA √©: " + p.top_Red() + "\n");
 				}
 				catch(EPilhaVazia e) {
 					System.out.println(e.getMessage());
@@ -57,7 +97,7 @@ public class MainClass {
 				
 			case 6://top black
 				try {
-					System.out.print("O top da PILHA PRETA È: " + p.top_Black() + "\n");
+					System.out.print("O top da PILHA PRETA √©: " + p.top_Black() + "\n");
 				}
 				catch(EPilhaVazia e) {
 					System.out.println(e.getMessage());
@@ -66,7 +106,7 @@ public class MainClass {
 				
 			case 7://isEmptyRed
 					if(p.isEmpty_Red()) {
-						System.out.println("A PILHA VERMELHA est· vazia" + "\n");
+						System.out.println("A PILHA VERMELHA est√° vazia" + "\n");
 					}
 					else {
 						System.out.println("Tem alguma coisa na PILHA VERMELHA" + "\n");
@@ -75,7 +115,7 @@ public class MainClass {
 
 			case 8://isEmptyBlack
 				if(p.isEmpty_Black()) {
-					System.out.println("A PILHA PRETA est· vazia" + "\n");
+					System.out.println("A PILHA PRETA est√° vazia" + "\n");
 				}
 				else {
 					System.out.println("Tem algo na PILHA PRETA" + "\n");
@@ -84,7 +124,7 @@ public class MainClass {
 			
 			case 9://sizeRed
 				try {
-					System.out.print("O tamanho da PILHA VERMELHA È: " +p.size_Red() + "\n");	
+					System.out.print("O tamanho da PILHA VERMELHA √©: " +p.size_Red() + "\n");	
 				}
 				catch(EPilhaVazia e) {
 					System.out.println(e.getMessage());
@@ -93,7 +133,7 @@ public class MainClass {
 				
 			case 10://sizeBlack
 				try {
-					System.out.print("O tamanho da PILHA PRETA È: " + p.size_Black() + "\n");
+					System.out.print("O tamanho da PILHA PRETA √©: " + p.size_Black() + "\n");
 				}
 				catch(EPilhaVazia e) {
 					System.out.println(e.getMessage());
@@ -104,5 +144,5 @@ public class MainClass {
 			
 		}//eol
 	
-	}//end of daquele role l·
+	}//end of daquele role l√°
 }//end of class
